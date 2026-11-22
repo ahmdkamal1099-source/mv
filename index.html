@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كورس التنفس الصناعي – د. كمال | Mechanical Ventilation Course</title>
+<meta name="description" content="كورس Mechanical Ventilation من الأساسيات للـ Advanced modes: محاضرات نظرية مفصلة + فيديوهات سريعة وعملية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F6F6; --surface:#FFFFFF; --ink:#0B2530; --muted:#4A6670; --line:#D3E0E2;
+  --teal:#0F766E; --teal-ink:#FFFFFF; --amber:#B45309; --tint:#E3F0EE;
+  --mon:#08191F; --mon-line:#12353F; --mon-ink:#E8F3F2; --p:#FFC857; --f:#5EEAD4;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1A20; --surface:#10262E; --ink:#E8F3F2; --muted:#9BB5BB; --line:#1D3C46;
+    --teal:#2DD4BF; --teal-ink:#06201C; --amber:#FFC857; --tint:#12303A; --mon:#06141A; --mon-line:#0F2D36;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1A20; --surface:#10262E; --ink:#E8F3F2; --muted:#9BB5BB; --line:#1D3C46;
+  --teal:#2DD4BF; --teal-ink:#06201C; --amber:#FFC857; --tint:#12303A; --mon:#06141A; --mon-line:#0F2D36;
+}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;line-height:1.8;font-size:17px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--mon);z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--p);outline-offset:3px}
+.en{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;direction:ltr;unicode-bidi:isolate}
+
+/* hero */
+.hero{background:var(--mon);color:var(--mon-ink);position:relative;overflow:hidden;padding:56px 0 0;
+  background-image:linear-gradient(var(--mon-line) 1px,transparent 1px),linear-gradient(90deg,var(--mon-line) 1px,transparent 1px);background-size:40px 40px}
+.hero h1{font-size:clamp(34px,7vw,64px);line-height:1.25;margin:0 0 14px;font-weight:700;max-width:16ch}
+.hero p.lead{font-size:clamp(17px,2.4vw,21px);max-width:44ch;margin:0 0 26px;color:#B9D2D6}
+.by{display:inline-block;margin:0 0 18px;padding:2px 14px;border:1px solid var(--mon-line);border-radius:99px;color:#B9D2D6;font-size:15px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;text-decoration:none;font-size:17px;border:2px solid var(--teal);background:var(--teal);color:var(--teal-ink)}
+.btn.alt{background:transparent;color:inherit;border-color:currentColor}
+.hero .btn{background:var(--f);border-color:var(--f);color:#06201C}
+.hero .btn.alt{background:transparent;color:var(--mon-ink);border-color:#5b8089}
+.wave{display:block;width:100%;height:auto;max-height:210px;direction:ltr}
+.wave .lp,.wave .lf{fill:none;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1800;stroke-dashoffset:1800;animation:draw 3.2s ease-out forwards}
+.wave .lp{stroke:var(--p)} .wave .lf{stroke:var(--f);animation-delay:.4s}
+.wave text{font:12px system-ui,sans-serif;fill:#8FB0B6}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.wave .lp,.wave .lf{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+
+section{padding:56px 0}
+h2{font-size:clamp(26px,4vw,36px);line-height:1.35;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 30px;max-width:60ch}
+
+/* two tracks */
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.track{padding:28px}
+.track+.track{border-inline-start:1px solid var(--line)}
+.track h3{margin:0 0 6px;font-size:22px}
+.track p{margin:0 0 12px;color:var(--muted)}
+.track ul{margin:0;padding-inline-start:20px}
+.track li{margin:4px 0}
+.tag{display:inline-block;font-size:14px;font-weight:700;color:var(--teal);margin-bottom:6px}
+
+/* audience */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.aud div{background:var(--tint);border-radius:12px;padding:20px 22px;font-weight:500}
+.aud small{display:block;color:var(--muted);font-weight:400;font-size:15px;margin-top:2px}
+
+/* contents */
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.grp h3{margin:0 0 10px;font-size:19px;color:var(--teal)}
+.grp.wide{grid-column:1/-1}
+.grp ul{list-style:none;margin:0;padding:0}
+.grp li{padding:7px 0;border-bottom:1px dashed var(--line);direction:ltr;text-align:left}
+.grp li:last-child{border-bottom:0}
+.grp.wide ul{display:grid;grid-template-columns:repeat(2,1fr);column-gap:30px}
+.grp.wide li:nth-last-child(2){border-bottom:0}
+
+/* price */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
+.price b{display:block;font-size:40px;line-height:1.2;color:var(--ink)}
+.price span{color:var(--muted)}
+.price.main{border:2px solid var(--teal)}
+
+.cta{background:var(--mon);color:var(--mon-ink);text-align:center;padding:60px 0}
+.cta h2{margin-bottom:10px}
+.cta p{color:#B9D2D6;margin:0 auto 26px;max-width:46ch}
+.cta .btns{justify-content:center;margin:0}
+.cta .btn{background:var(--f);border-color:var(--f);color:#06201C}
+.cta .btn.alt{background:transparent;color:var(--mon-ink);border-color:#5b8089}
+footer{padding:22px 0;text-align:center;color:var(--muted);font-size:14px}
+
+@media (max-width:760px){
+  .tracks,.aud,.cols,.prices,.grp.wide ul{grid-template-columns:1fr}
+  .track+.track{border-inline-start:0;border-top:1px solid var(--line)}
+  .grp.wide li:nth-last-child(2){border-bottom:1px dashed var(--line)}
+  section{padding:42px 0}
+  .btn{flex:1 1 100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="by">د. كمال</span>
+    <h1>كورس التنفس الصناعي <span class="en">Mechanical Ventilation</span></h1>
+    <p class="lead">من الأساسيات لحد الـ Advanced modes: محاضرات نظرية مفصلة، وفيديوهات سريعة وعملية تشرح المهم بس.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/DrAkamal3" target="_blank" rel="noopener">اطلب الدورة على تيليجرام</a>
+      <a class="btn alt" href="https://t.me/mvdockamal" target="_blank" rel="noopener">شاهد شرح تجريبي</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 600 200" preserveAspectRatio="none" role="img" aria-label="رسم توضيحي لمنحنى الضغط والتدفق على جهاز التنفس الصناعي">
+    <text x="8" y="16">Pressure</text><text x="8" y="188" style="fill:#5EEAD4">Flow</text>
+    <path class="lp" d="M0 150 H30 C34 70 40 60 60 60 L120 56 C128 90 132 150 140 150 H230 C234 70 240 60 260 60 L320 56 C328 90 332 150 340 150 H430 C434 70 440 60 460 60 L520 56 C528 90 532 150 540 150 H600" transform="translate(0,-20)"/>
+    <path class="lf" d="M0 110 H30 L34 40 C50 60 90 90 120 108 L128 170 C132 150 136 120 140 110 H230 L234 40 C250 60 290 90 320 108 L328 170 C332 150 336 120 340 110 H430 L434 40 C450 60 490 90 520 108 L528 170 C532 150 536 120 540 110 H600" transform="translate(0,6)"/>
+  </svg>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>الكورس بيشرح من محورين</h2>
+    <p class="sub">تذاكر بالتفصيل وتراجع بسرعة، وتشوف التطبيق العملي على الجهاز.</p>
+    <div class="tracks">
+      <div class="track">
+        <span class="tag">المحور الأول</span>
+        <h3>محاضرات نظرية طويلة ومفصلة</h3>
+        <p>شرح كامل لكل موضوع من الأساس، علشان تفهم ليه بتعمل كل خطوة.</p>
+      </div>
+      <div class="track">
+        <span class="tag">المحور الثاني</span>
+        <h3>فيديوهات سريعة وعملية</h3>
+        <ul>
+          <li>فيديوهات قصيرة لأهم النقط</li>
+          <li>فيديوهات شرح عملي على الجهاز</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>الكورس مناسب لمين؟</h2>
+    <p class="sub">لأي حد بيتعامل مع مريض على جهاز تنفس صناعي.</p>
+    <div class="aud">
+      <div>أطباء الرعاية المركزة والتخدير والصدرية<small>Critical care · Anesthesia · Chest</small></div>
+      <div>أخصائيو العلاج التنفسي<small>Respiratory therapists</small></div>
+      <div>التمريض الخاص بالرعاية المركزة<small>ICU nursing</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>محتويات الدورة</h2>
+    <p class="sub">أربع مراحل: الأساسيات، الضبط والمتابعة، الحالات الإكلينيكية، ثم الأنماط المتقدمة.</p>
+    <div class="cols">
+      <div class="grp">
+        <h3>الأساسيات</h3>
+        <ul>
+          <li>Basic terms for MV</li>
+          <li>How does ventilator works</li>
+          <li>How breath is delivered</li>
+          <li>Indications for MV</li>
+          <li>Modes of MV</li>
+        </ul>
+      </div>
+      <div class="grp">
+        <h3>الضبط والمتابعة</h3>
+        <ul>
+          <li>Initial ventilator settings</li>
+          <li>Final settings</li>
+          <li>MV graphics</li>
+          <li>Effect of MV</li>
+          <li>Side effects of MV</li>
+          <li>Weaning from MV</li>
+        </ul>
+      </div>
+      <div class="grp wide">
+        <h3>التنفس الصناعي في الحالات الإكلينيكية</h3>
+        <ul>
+          <li>MV for Asthma</li>
+          <li>MV for COPD</li>
+          <li>MV for NMD</li>
+          <li>MV for ARDS</li>
+          <li>MV for cardiac failure</li>
+          <li>MV for increased ICP</li>
+          <li>MV for post operative</li>
+          <li>MV for burn</li>
+        </ul>
+      </div>
+      <div class="grp wide">
+        <h3>الأنماط المتقدمة <span class="en">Advanced modes</span></h3>
+        <ul>
+          <li>PAV</li>
+          <li>APRV</li>
+          <li>NAVA</li>
+          <li>ASV</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>سعر الدورة</h2>
+    <p class="sub">اختار السعر حسب بلدك.</p>
+    <div class="prices">
+      <div class="price"><span>السعودية</span><b>75</b><span>ريال</span></div>
+      <div class="price main"><span>مصر</span><b>750</b><span>جنيه</span></div>
+      <div class="price"><span>باقي الدول</span><b>18</b><span>دولار</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>ابدأ تتعلم التنفس الصناعي بثقة</h2>
+    <p>شوف الشرح التجريبي الأول، وبعدها كلم د. كمال على تيليجرام لطلب الدورة.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/DrAkamal3" target="_blank" rel="noopener">اطلب الدورة</a>
+      <a class="btn alt" href="https://t.me/mvdockamal" target="_blank" rel="noopener">الشرح التجريبي</a>
+    </div>
+  </div>
+</div>
+<footer>© كورس التنفس الصناعي – د. كمال</footer>
+
+</body>
+</html>
